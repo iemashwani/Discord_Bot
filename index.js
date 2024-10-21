@@ -1,4 +1,6 @@
 const { Client, GatewayIntentBits, userMention } = require("discord.js");
+require("dotenv").config();
+const link = process.env.LINK;
 
 const client = new Client({
   intents: [
@@ -25,7 +27,4 @@ client.on("interactionCreate", (interaction) => {
   console.log(interaction);
   interaction.reply("Pong!");
 });
-
-client.login(
-  "MTI5NzA1MDA4Njg5MDU0MTEyNg.GJBEzJ.7P4IVTLZHs-kHt79wCiZt_u8SU-O055ge9YhCw"
-);
+client.login(link);
